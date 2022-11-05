@@ -1,15 +1,17 @@
 {
   "name": "googlebooks-app",
   "version": "1.0.0",
+  "homepage": "https://ricky8221.github.io/Book_search_engine_Qi-Chen",
   "description": "",
   "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js",
     "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
     "install": "cd server && npm i && cd ../client && npm i",
-    "build": "cd client && npm run build"
+    "build": "cd client && npm run build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
-
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -18,6 +20,7 @@
     "if-env": "^1.0.4"
   },
   "devDependencies": {
-    "concurrently": "^5.2.0"
+    "concurrently": "^5.2.0",
+    "gh-pages": "^4.0.0"
   }
 }
